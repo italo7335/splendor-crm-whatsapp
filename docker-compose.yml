@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  wppconnect:
+    image: wppconnect/server
+    restart: always
+    ports:
+      - '3000:21465'
+    environment:
+      - WEBHOOK_URL=https://zmyzuinoailpmayifusx.supabase.co/functions/v1/whatsapp-webhook
+    volumes:
+      - ./tokens:/app/tokens
